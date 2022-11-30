@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Photogallery - upload</title>
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
 
-    <div class="panel panel-primary">
+        <div class="panel panel-primary">
 
-      <div class="panel-heading">
-        <h2>Upload a photo</h2>
-      </div>
-
-      <div class="panel-body">
-
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
-
-        <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" name="category" id="categorySelector" value="trees">
-
-            <div class="mb-3">
-                <label class="form-label" for="inputFile">File:</label>
-                <input
-                    type="file"
-                    name="file"
-                    id="inputFile"
-                    class="form-control @error('file') is-invalid @enderror">
-
-                @error('file')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+            <div class="panel-heading">
+                <h2>Upload a photo</h2>
             </div>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-success">Upload</button>
+            <div class="panel-body">
+
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+
+                <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="category" id="categorySelector" value="trees">
+
+                    <table>
+                        <tr>
+                            <td><label class="form-label" for="inputFile">Image:</label></td>
+                            <td>
+                                <input type="file" name="file" id="inputFile"
+                                    class="form-control @error('file') is-invalid @enderror">
+                            </td>
+                            <td>
+                                @error('file')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </td>
+                        </tr>
+                        <tr><td><br></td></tr>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" name="name" id="nameField" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="author">Author:</label></td>
+                            <td><input type="text" name="author" id="authorField" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="generator">Generator:</label></td>
+                            <td><input type="text" name="generator" id="generatorField" required></td>
+                        </tr>
+                        <tr><td><br></td></tr>
+                        <tr>
+                            <td colspan="2"><label for="description">Description:</label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><textarea name="description" id="descriptionField" cols="30" rows="10" required></textarea></td>
+                        </tr>
+                    </table>
+                    <div><button type="submit" class="btn btn-success">Upload</button></div>
+
+                </form>
+
             </div>
-
-        </form>
-
-      </div>
+        </div>
     </div>
-</div>
 </body>
 
 </html>

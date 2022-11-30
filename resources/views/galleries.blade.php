@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Photogallery - galleries</title>
+    <title>Photogallery - gallery</title>
 </head>
 <body>
     <h1>Galleries</h1>
