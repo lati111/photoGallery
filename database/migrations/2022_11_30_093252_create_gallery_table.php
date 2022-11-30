@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('gallery', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 40);
+            $table->string('name', 40)->primary();
             $table->text('description');
             $table->timestamps();
         });

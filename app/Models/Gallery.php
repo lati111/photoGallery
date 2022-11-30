@@ -13,5 +13,7 @@ class Gallery extends Model
      * @var string
      */
     protected $table = 'gallery';
-    protected $primaryKey = 'galleryID';
+    protected $primaryKey = 'name';
+    protected $keyType = 'string';
+    public $incrementing = false;
 }
