@@ -29,7 +29,8 @@ class UploadController extends Controller
 
         $fileName = time() . '.' . $request->file->extension();
 
-        $request->file->move(public_path('uploads'), $fileName);
+
+        $request->file->move(public_path('images/' . $request->category), $fileName);
 
         /*
             Write Code Here for

@@ -23,6 +23,7 @@
 
         <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="category" id="categorySelector" value="trees">
 
             <div class="mb-3">
                 <label class="form-label" for="inputFile">File:</label>
