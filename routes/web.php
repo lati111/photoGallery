@@ -10,3 +10,7 @@ Route::post('/upload', [UploadController::class, 'store'])->name('file.store');
 Route::get('/', function () {
     return view('home');
 })->name("home");
+
+Route::get('/galleries', function () {
+    return view('galleries');
+})->name("galleries");
