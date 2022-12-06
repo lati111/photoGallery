@@ -45,17 +45,20 @@
                         </tr>
                         <tr>
                             <td><label for="author">Author:</label></td>
-                            <td><input type="text" name="author" id="authorField" required></td>
+                            <td><input type="text" name="author" id="authorField" required minlength="4" maxlength="32"></td>
                         </tr>
                         <tr>
                             <td><label for="generator">Generator:</label></td>
-                            <td><input type="text" name="generator" id="generatorField" required></td>
+                            <td><input type="url" name="generator" id="generatorField" required minlength="4" maxlength="32"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><label for="description">Description:</label></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><textarea name="description" id="descriptionField" cols="30" rows="10" required></textarea></td>
+                            <td colspan="2">
+                                <textarea name="description" id="descriptionField" cols="30" rows="10" required minlength="6">
+                                </textarea>
+                                </td>
                         </tr>
                     </table>
                     <div><button type="submit" class="btn btn-success">Upload</button></div>
