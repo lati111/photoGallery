@@ -21,6 +21,11 @@ class UploadController extends Controller
     {
         $request->validate([
             'file' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'name' => 'required|string|between:4,32',
+            'author' => 'required|string|between:4,32',
+            'generator' => 'required|url',
+            'description' => 'required|min:6',
+            'category' => 'required|exists:gallery',
         ]);
 
         $fileName = time() . '.' . $request->file->extension();
@@ -34,7 +39,6 @@ class UploadController extends Controller
         */
 
         return back()
-            ->with('success', 'You have successfully upload file.')
-            ->with('file', $fileName);
+            ->with('success', 'Image added to gallery successfully.');
     }
 }

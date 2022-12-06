@@ -7,5 +7,7 @@
 </head>
 <body>
     <h1>Homepage</h1>
+    <div><a href="/upload">upload</a></div>
+    <div><a href="/gallery">gallery</a></div>
 </body>
 </html>

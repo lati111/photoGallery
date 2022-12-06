@@ -11,6 +11,6 @@ Route::get('/', function () {
     return view('home');
 })->name("home");
 
-Route::get('/galleries', function () {
+Route::get('/gallery', function () {
     return view('galleries');
 })->name("galleries");

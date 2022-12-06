@@ -39,7 +39,6 @@
                                 @enderror
                             </td>
                         </tr>
-                        <tr><td><br></td></tr>
                         <tr>
                             <td><label for="name">Name:</label></td>
                             <td><input type="text" name="name" id="nameField" required></td>
@@ -52,7 +51,6 @@
                             <td><label for="generator">Generator:</label></td>
                             <td><input type="text" name="generator" id="generatorField" required></td>
                         </tr>
-                        <tr><td><br></td></tr>
                         <tr>
                             <td colspan="2"><label for="description">Description:</label></td>
                         </tr>
