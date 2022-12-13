@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\ImageManager as Image;
 use Illuminate\Http\Request;
+use App\Models\Photo;
 
 class UploadController extends Controller
 {
@@ -29,14 +31,22 @@ class UploadController extends Controller
         ]);
 
         $fileName = time() . '.' . $request->file->extension();
-
-
         $request->file->move(public_path('images/' . $request->category), $fileName);
 
-        /*
-            Write Code Here for
-            Store $fileName name in DATABASE from HERE
-        */
+        $data = getimagesize('images/' . $request->category . "/" . $fileName);
+        $width =
+
+
+        $photo = new Photo();
+        $photo->name = $request->input('name');
+        $photo->author = $request->input('author');
+        $photo->generator = $request->input('generator');
+        $photo->prompt = $request->input('description');
+        $photo->category = $request->input('category');
+        $photo->height = $data[1];;
+        $photo->width = $data[0];
+        $photo->img = $fileName;
+        $photo->save();
 
         return back()
             ->with('success', 'Image added to gallery successfully.');

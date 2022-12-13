@@ -52,7 +52,7 @@
                             <td><input type="url" name="generator" id="generatorField" required minlength="4" maxlength="32"></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><label for="description">Description:</label></td>
+                            <td colspan="2"><label for="description">Prompt:</label></td>
                         </tr>
                         <tr>
                             <td colspan="2">

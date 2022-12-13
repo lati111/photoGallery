@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string("author", 40);
             $table->string("generator", 40);
             $table->text("prompt");
+            $table->string("category", 40);
             $table->integer("height");
             $table->integer("width");
+            $table->string("img", 40);
             $table->timestamps();
         });
     }
