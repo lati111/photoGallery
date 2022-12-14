@@ -14,6 +14,10 @@
                 <h2>Upload a photo</h2>
             </div>
 
+            <div>
+                <a href="">Back to gallery</a>
+            </div>
+
             <div class="panel-body">
 
                 @if ($message = Session::get('success'))

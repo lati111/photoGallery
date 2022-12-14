@@ -34,8 +34,6 @@ class UploadController extends Controller
         $request->file->move(public_path('images/' . $request->category), $fileName);
 
         $data = getimagesize('images/' . $request->category . "/" . $fileName);
-        $width =
-
 
         $photo = new Photo();
         $photo->name = $request->input('name');
