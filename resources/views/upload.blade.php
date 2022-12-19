@@ -15,7 +15,7 @@
             </div>
 
             <div>
-                <a href="">Back to gallery</a>
+                <a href="/gallery">Back to gallery</a>
             </div>
 
             <div class="panel-body">

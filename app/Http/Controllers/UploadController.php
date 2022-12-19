@@ -22,7 +22,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'file' => 'required|mimes:png,jpg,jpeg,webp|max:2048',
             'name' => 'required|string|between:4,32',
             'author' => 'required|string|between:4,32',
             'generator' => 'required|url',
