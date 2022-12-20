@@ -13,5 +13,5 @@ Route::get('/gallery', [GalleriesController::class, "show"])->name("galleries");
 Route::get('/gallery/{category}', [GalleryController::class, "show"])->name("gallery");
 
 Route::get('/', function () {
-    return view('home');
-})->name("home");
+    return redirect('/gallery');
+});
