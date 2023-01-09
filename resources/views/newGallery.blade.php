@@ -22,17 +22,25 @@
                 <form action="{{ route('gallery.new.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    @error('file')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-
                     <table>
                         <tr>
                             <td><label for="name">Name:</label></td>
                             <td><input type="text" name="name" id="nameField" required></td>
+                            <td>
+                                @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2"><label for="description">Description:</label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @error('description')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">
