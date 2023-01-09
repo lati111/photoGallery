@@ -15,7 +15,7 @@
             </div>
 
             <div>
-                <a href="/gallery">To galleries</a>
+                <a href="{{ route('galleries') }}"><button>&#x2190; To galleries</button></a>
             </div>
 
             <div class="panel-body">

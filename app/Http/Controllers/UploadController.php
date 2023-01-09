@@ -8,9 +8,9 @@ use App\Models\Photo;
 
 class UploadController extends Controller
 {
-    public function index()
+    public function show(string $category)
     {
-        return view('upload');
+        return view('upload', ["category" => $category]);
     }
 
 
@@ -21,7 +21,7 @@ class UploadController extends Controller
             'name' => 'required|string|between:4,32',
             'author' => 'required|string|between:4,32',
             'generator' => 'required|url',
-            'description' => 'required|min:6',
+            'description' => 'required|min:2',
             'category' => 'required|exists:gallery',
         ]);
 
@@ -41,7 +41,7 @@ class UploadController extends Controller
         $photo->img = $fileName;
         $photo->save();
 
-        return back()
+        return redirect()->route("gallery", ["category" => $request->input('category')])
             ->with('success', 'Image added to gallery successfully.');
     }
 }

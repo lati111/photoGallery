@@ -35,7 +35,7 @@
     <div>
         <a href="{{ route('galleries') }}"><button>&#x2190; To galleries</button></a>
         <br>
-        <a href="{{ route('upload') }}"><button>Upload image</button></a>
+        <a href="{{ route('upload', ["category" => $category]) }}"><button>Upload image</button></a>
     </div>
 
 
