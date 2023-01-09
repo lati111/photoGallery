@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use App\Models\Photo;
 
 class GalleriesController extends Controller
 {
@@ -20,9 +21,16 @@ class GalleriesController extends Controller
     private function getGalleries(): array {
         $galleries = [];
         foreach (Gallery::all() as $gallery) {
-            $arr = [];
+            $arr = ["img1" => "blank.png", "img2" => "blank.png", "img3" => "blank.png", "img4" => "blank.png"];
             $arr["title"] = $gallery["category"];
             $arr["description"] = $gallery["description"];
+
+            $photos = Photo::limit(4)->select('img')->where('category', $gallery["category"])->get()->toArray();
+            $index = 1;
+            foreach($photos as $photo) {
+                $arr["img" . $index] = $gallery["category"] . "/" . $photo["img"];
+                $index++;
+            }
             $galleries[] = $arr;
         }
         return $galleries;
