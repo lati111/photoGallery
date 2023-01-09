@@ -20,10 +20,6 @@
             object-fit: contain;
             width: 100%
         }
-        .photoAuthor {
-            float: right;
-            color: grey;
-        }
         .photoGenerator {
             float: right;
             font-size: 0.8em;
@@ -50,11 +46,13 @@
             <div class="photoContainer">
                 <div class="imgContainer"><img src="/images/{{$category}}/{{$photo["img"]}}"></div>
                 <div>
-                    <span class="photoTitle">{{$photo["name"]}}</span>
-                    <span class="photoAuthor">{{$photo["author"]}}</span>
+                    <span class="photoTitle"><b>Title:</b> {{$photo["name"]}}</span>
                 </div>
                 <div>
-                    <span class="photoPrompt">{{$photo["prompt"]}}</span>
+                    <span class="photoAuthor"><b>Author:</b> {{$photo["author"]}}</span>
+                </div>
+                <div>
+                    <span class="photoPrompt"><b>Prompt:</b> {{$photo["prompt"]}}</span>
                 </div>
                 <div>
                     <a href="{{$photo["generator"]}}"><span class="photoGenerator">{{$photo["generator"]}}</span></a>

@@ -7,20 +7,26 @@
     <title>Photogallery - gallery</title>
 
     <style>
+        h1 {
+            text-align: center;
+        }
         #galleryList{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             flex-wrap: wrap;
         }
+        .gallery {
+            width: 12em;
+        }
         .imgDisplay {
             display: grid;
-            grid-template-columns: 4em 4em;
-            grid-template-rows: 4em 4em;
+            grid-template-columns: 6em 6em;
+            grid-template-rows: 6em 6em;
         }
         .imgContainer {
-            width: 4em;
-            height: 4em;
+            width: 6em;
+            height: 6em;
         }
         .imgContainer img {
             object-fit: contain;
@@ -37,7 +43,7 @@
     <a href="{{ route('gallery.new.show') }}"><button>Create gallery</button></a>
     <div id="galleryList">
         @foreach ($galleries as $gallery)
-            <div>
+            <div class="gallery">
                 <a class="galleryTitle" href="/gallery/{{ $gallery['title'] }}"><b>{{ $gallery['title'] }}</b></a>
                 <div class="galleryListDesc">{{ $gallery['description'] }}</div>
                 <div class="imgDisplay">
