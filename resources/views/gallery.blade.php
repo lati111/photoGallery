@@ -32,7 +32,12 @@
 </head>
 <body>
     <h1>{{$category}}</h1>
-    <a href="/gallery"><button>To galleries</button></a>
+    <div>
+        <a href="{{ route('galleries') }}"><button>&#x2190; To galleries</button></a>
+        <br>
+        <a href="{{ route('upload') }}"><button>Upload image</button></a>
+    </div>
+
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
