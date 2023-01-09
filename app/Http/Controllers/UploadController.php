@@ -8,17 +8,12 @@ use App\Models\Photo;
 
 class UploadController extends Controller
 {
-    /**
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('upload');
     }
 
-    /**
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([

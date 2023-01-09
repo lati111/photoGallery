@@ -13,6 +13,7 @@
 </head>
 <body>
     <h1>Galleries</h1>
+    <a href="{{ route('gallery.new.show') }}"><button>Create gallery</button></a>
     <ul>
         @foreach ($galleries as $gallery)
             <li>

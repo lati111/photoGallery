@@ -24,10 +24,22 @@
             float: right;
             color: grey;
         }
+        .photoGenerator {
+            float: right;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
     <h1>{{$category}}</h1>
+    <a href="/gallery"><button>To galleries</button></a>
+
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
     <div id="gallery">
         @foreach ($photos as $photo)
             <div class="photoContainer">
@@ -35,6 +47,12 @@
                 <div>
                     <span class="photoTitle">{{$photo["name"]}}</span>
                     <span class="photoAuthor">{{$photo["author"]}}</span>
+                </div>
+                <div>
+                    <span class="photoPrompt">{{$photo["prompt"]}}</span>
+                </div>
+                <div>
+                    <a href="{{$photo["generator"]}}"><span class="photoGenerator">{{$photo["generator"]}}</span></a>
                 </div>
             </div>
         @endforeach
