@@ -3,6 +3,12 @@
 
 <head>
     <title>Photogallery - New Gallery</title>
+    <style>
+        .text-danger {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
